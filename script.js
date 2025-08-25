@@ -536,6 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // 1. Fetch the initial list of all patients
             const response = await fetch(allPatientsApiUrl);
+            console.log(response);
             if (!response.ok) {
                 throw new Error(`Server responded with status ${response.status}`);
             }
