@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function uploadJsonToServer(userName, userId, testType, jsonData) {
         updateStatus('Uploading results to server...');
-        const apiUrl = 'http://www.codex.somee.com/api/Codex/AddResults';
+        const apiUrl = 'https://www.codex.somee.com/api/Codex/AddResults';
         const payload = { PatientName: userName, PhoneNumber: userId, TestType: testType, Results: JSON.stringify(jsonData) };
         try {
             const response = await fetch(apiUrl, {
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ADMIN DASHBOARD LOGIC ---
     async function fetchAllPatients() {
-        const allPatientsApiUrl = 'http://www.codex.somee.com/api/Codex/GetAllPatients';
+        const allPatientsApiUrl = 'https://www.codex.somee.com/api/Codex/GetAllPatients';
         try {
             // 1. Fetch the initial list of all patients
             const response = await fetch(allPatientsApiUrl);
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. For each patient, fetch their specific test results to get the count and test types
             const patientPromises = patients.map(async (patient) => {
-                const resultsApiUrl = `http://www.codex.somee.com/api/Codex/GetAllTestResults/${patient.id}`;
+                const resultsApiUrl = `https://www.codex.somee.com/api/Codex/GetAllTestResults/${patient.id}`;
                 try {
                     const resultsResponse = await fetch(resultsApiUrl);
                     if (resultsResponse.ok) {
@@ -733,8 +733,8 @@ async function launchReport(patientId) {
         const patientName = patientRow.querySelector('td:nth-child(2)').textContent;
         const patientPhone = patientRow.querySelector('td:nth-child(3)').textContent;
         
-        // Open external Codex user page with patient ID
-        const externalUrl = `https://codex.natixglobal.com/user/${patientId}`;
+        // Open external Codex user page with patient ID parameter
+        const externalUrl = `https://codex.natixglobal.com/user?id=${patientId}`;
         window.open(externalUrl, '_blank');
         
     } catch (error) {
@@ -764,7 +764,7 @@ function openUserPageWithData(patientId, patientName, patientPhone, resultsData)
 // Function to copy user link to clipboard
 async function copyUserLink(patientId) {
     try {
-        const userLink = `https://codex.natixglobal.com/user/${patientId}`;
+        const userLink = `https://codex.natixglobal.com/user?id=${patientId}`;
         
         // Use modern clipboard API if available
         if (navigator.clipboard && window.isSecureContext) {
@@ -801,7 +801,7 @@ async function copyUserLink(patientId) {
         
     } catch (error) {
         console.error('Error copying user link:', error);
-        alert('Failed to copy link to clipboard. Please copy manually: ' + `https://codex.natixglobal.com/user/${patientId}`);
+        alert('Failed to copy link to clipboard. Please copy manually: ' + `https://codex.natixglobal.com/user?id=${patientId}`);
     }
 }
 
@@ -821,7 +821,7 @@ async function deletePatient(patientId, patientName) {
         }
         
         // Call the delete API
-        const deleteUrl = `http://www.codex.somee.comgetresults/api/Codex/DeletePatient/${patientId}`;
+        const deleteUrl = `https://www.codex.somee.com/api/Codex/DeletePatient/${patientId}`;
         const response = await fetch(deleteUrl, {
             method: 'DELETE',
             headers: {
