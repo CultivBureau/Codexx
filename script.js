@@ -495,7 +495,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Server responded with status ${response.status}: ${errorText}`);
             }
             const result = await response.json();
-            console.log('Server response:', result);
             updateStatus('Upload successful!', false, true);
         } catch (error) {
             console.error('Upload failed:', error);
@@ -541,7 +540,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Server responded with status ${response.status}`);
             }
             const patients = await response.json();
-            console.log("Initial patient list:", patients);
 
             // 2. For each patient, fetch their specific test results to get the count and test types
             const patientPromises = patients.map(async (patient) => {
@@ -550,7 +548,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resultsResponse = await fetch(resultsApiUrl);
                     if (resultsResponse.ok) {
                         const resultsData = await resultsResponse.json();
-                        console.log(`Patient ${patient.id} results:`, resultsData);
                         
                         // Handle different possible API response structures
                         let testsArray = null;
@@ -574,7 +571,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Get the test types for display - handle different possible API response formats
                         if (testsArray && testsArray.length > 0) {
                             patient.testTypes = testsArray.map(test => {
-                                console.log('Processing test:', test);
                                 
                                 // Try different possible property names for test type
                                 if (test.TestType) {
@@ -603,9 +599,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 if (test.name) {
                                     return test.name;
                                 }
-                                
-                                // Fallback - show the test object structure
-                                console.log('Unknown test format:', test);
                                 return 'Unknown Test';
                             });
                         } else {
@@ -635,7 +628,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populateTable(patients) {
-        console.log(patients);
         const patientTableBody = document.getElementById('patient-table-body');
         patientTableBody.innerHTML = '';
         if (patients.length === 0) {
@@ -720,8 +712,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Global function for launching reports (called from HTML onclick)
 async function launchReport(patientId) {
-    console.log(`Launching report for patient ${patientId}`);
-    
     try {
         // Find patient info from the table
         const patientRow = document.querySelector(`tr[data-patient-id="${patientId}"]`);
@@ -795,10 +785,7 @@ async function copyUserLink(patientId) {
             copyBtn.innerHTML = originalText;
             copyBtn.classList.remove('text-green-600', 'bg-green-50');
             copyBtn.classList.add('text-blue-600', 'hover:text-blue-900', 'bg-blue-50', 'hover:bg-blue-100');
-        }, 2000);
-        
-        console.log('User link copied to clipboard:', userLink);
-        
+        }, 2000);        
     } catch (error) {
         console.error('Error copying user link:', error);
         alert('Failed to copy link to clipboard. Please copy manually: ' + `https://codex.natixglobal.com/user/${patientId}`);
