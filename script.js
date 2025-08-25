@@ -635,6 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populateTable(patients) {
+        console.log(patients);
         const patientTableBody = document.getElementById('patient-table-body');
         patientTableBody.innerHTML = '';
         if (patients.length === 0) {
