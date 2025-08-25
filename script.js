@@ -532,7 +532,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ADMIN DASHBOARD LOGIC ---
     async function fetchAllPatients() {
-        const allPatientsApiUrl = 'http://www.codex.somee.com/api/Codex/GetAllPatients';
+        const allPatientsApiUrl = 'https://www.codex.somee.com/api/Codex/GetAllPatients';
         try {
             // 1. Fetch the initial list of all patients
             const response = await fetch(allPatientsApiUrl);
