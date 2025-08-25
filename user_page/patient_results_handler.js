@@ -591,7 +591,7 @@ function showResultsInDetails(item, resultValue, action = null) {
                     Your Result
                 </h4>
                 <div class="text-green-700 text-center">
-                    ${action ? `<p class="mb-2 text-lg"><strong>Action:</strong> ${action}</p>` : ''}
+                    ${action ? `<p class="mb-2 text-lg">${action}</p>` : ''}
                     <p class="text-xl font-semibold">${resultValue}</p>
                 </div>
                 

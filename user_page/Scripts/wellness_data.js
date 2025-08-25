@@ -2,19 +2,19 @@ const wellnessData = [
     {
         name: "Antioxidant capacity",
         definition: "The body's antioxidant defense system, especially the enzymes glutathione peroxidase and catalase, are responsible for keeping the levels of reactive oxygen species (ROS) low to avoid a physiological state of oxidative stress. Reactive oxygen species (ROS) are by-products of normal cellular activity. They are produced in many cellular compartments and play an important role in signaling pathways. However, overproduction of ROS disrupts the body's antioxidant defense system and can lead to oxidative stress. This situation is associated with the development of several human diseases (such as cancer, cardiovascular, neurodegenerative and metabolic disorders), inflammation and aging. Antioxidant mechanisms protect cells against ROS-induced oxidative damage. The body's antioxidant defense system has been reported to consist of SOD (manganese superoxide dismutase), CAT (catalase), GST (glutathione S-transferase) and GSH (glutathione) activity. SOD catalyzes the breakdown of endogenous cytotoxic superoxide radicals into H2O2, which is degraded by CAT. Therefore, they play a crucial role in the maintenance of physiological O2 and H2O2 levels. On the other hand, GSH, together with GST, has a basic role in cellular defense against deleterious free radicals and other oxidative species. GST catalyzes the conjugation of the thiol group of glutathione to electrophilic substrates and thus detoxifies endogenous compounds such as peroxidized lipids. Its activity and ability to protect cells and tissues from ROS and their harmful products are influenced by polymorphisms in antioxidant genes.",
-        variants: "—",
-        loci: "—",
+       
         genes: "(2) CAT, GPX1"
     },
     {
-        name: "Apolipoprotein A1",
+        name: "Apolipoprotein A1 levels",
         definition: "Apolipoprotein A1 or ApoA1 is a key protein in lipid metabolism, is the main protein component of high-density lipoproteins (HDL) or 'good cholesterol' and is involved in the transport of cholesterol from the tissues to the liver for excretion, among other processes. Apolipoprotein A1 is a relatively large protein, encoded by the APOA1 gene, which is the major component of HDL particles. ApoA1 is essential for the maintenance of lipid balance in the body and protection against atherosclerosis. Blood levels of apolipoprotein A1 are an important indicator of cardiovascular health along with apolipoprotein B or ApoB which is the most abundant protein in atherogenic particles such as low-density lipoprotein (LDL) particles usually called 'bad cholesterol'. The calculation of the ApoB/ApoA1 ratio can be helpful in estimating the risk of atherosclerosis and heart disease, among other parameters. There are multiple studies suggesting that low levels of apolipoprotein A1 are associated with an increased risk of cardiovascular disease, including heart disease and some forms of hereditary dyslipidemias, considered rare diseases, such as hereditary visceral amyloidosis and hypoalphalipoproteinemia-2. Plasma ApoA1 levels can be influenced by a variety of both genetic and other factors (dietary, lifestyle, medical conditions and treatments, hormonal factors, etc.).",
         variants: "13.5 million variants",
         loci: "396 loci",
         genes: "(446) ABCA1, ABCA8, ABO, ACOXL, ADAM10, etc."
     },
+
     {
-        name: "Apolipoprotein B",
+        name: "Apolipoprotein B levels",
         definition: "Apolipoprotein B or ApoB is a key protein in maintaining the structure of low-density lipoprotein (LDL) or 'bad cholesterol' particles and other larger lipid particles that carry cholesterol esters and triglycerides in varying amounts and proportions through the bloodstream. ApoB is the most abundant protein in atherogenic particles. The Apo-B100 isoform is part of the low-density particles that include very low density (VLDL), intermediate density (IDL), low density (LDL) and lipoprotein a or Lp(a) particles, while the Apo-B48 isoform is present in the larger particles known as chylomicrons. The number of ApoB particles that enter and become trapped in the arterial wall is determined primarily by the number of ApoB particles found in the arterial lumen. ApoB-containing particles that are smaller and poorer in cholesterol (such as LDL particles) have a greater tendency to become trapped than larger VLDL-type ApoB particles. Once retained in the artery wall, all ApoB particles are equally atherogenic. As the cholesterol content varies between different ApoB particles, triglyceride and cholesterol levels are not always accurate measures for estimating the number of ApoB particles. ApoB levels may be a more accurate indicator of atherogenic risk or likelihood of lipid accumulation in the artery wall. Multiple genetic and non-genetic factors can influence ApoB levels, including diet, lifestyle, medical conditions, medications, and hormonal factors.",
         variants: "13.5 million variants",
         loci: "215 loci",
@@ -107,22 +107,19 @@ const wellnessData = [
     {
         name: "Exercise-induced muscle damage (initial phase)",
         definition: "The presence of certain genetic variants could explain why some people are less likely to be injured than others, as well as having an easier time recovering from prolonged and strenuous exercise. Exercise can produce muscle damage through two types of alterations: early-onset mechanical damage and a subsequent inflammatory response. Eccentric exercise, in which muscles are stretched while contracting (e.g., squats), is a common model and is effective for improving muscle strength, coordination, and performance. However, it is also associated with muscle damage and soreness. Older individuals, especially those with a genetic predisposition, may be more susceptible to such damage and to injuries of muscles and tendons.",
-        variants: "—",
-        loci: "—",
+       
         genes: "(2) ACTN3, MYLK2"
     },
     {
         name: "Exercise-induced muscle damage (regeneration capacity)",
         definition: "Variants in genes related to the activation of muscle stem cells (satellite cells) are relevant to understanding why some people require more time to recover from muscle injury. Muscle damage occurs in three phases: mechanical damage, inflammation, and regeneration. During the regeneration phase, satellite cells are activated by signals from the inflammatory stage and work to repair or replace damaged fibers, restoring muscle function. Differences in this regenerative capacity may influence recovery speed and injury risk.",
-        variants: "—",
-        loci: "—",
+      
         genes: "(2) SLC30A8, SOD2"
     },
     {
         name: "Exercise-induced muscle damage (second phase)",
         definition: "In the second phase of muscle damage, an inflammatory response occurs, influenced by genetic variants that can increase or reduce damage severity. After mechanical damage, immune cells are recruited to the site (chemotaxis), and cytokines such as IL1B, IL6, and TNF are released to amplify inflammation. Variations in the genes coding for these cytokines can influence the intensity of this inflammatory phase and the recovery period needed after strenuous exercise.",
-        variants: "—",
-        loci: "—",
+       
         genes: "(3) IL1B, IL6, TNF"
     },
     {
@@ -135,8 +132,7 @@ const wellnessData = [
     {
         name: "Food intake control",
         definition: "Body weight and fat distribution are regulated by a complex network of hormones, neuropeptides, and neurotransmitters that influence appetite, satiety, and the reward response to food. Variants in genes affecting these pathways may explain why some people have a greater tendency to overeat high-calorie foods or snack between meals, increasing their predisposition to fat accumulation, overweight, and obesity.",
-        variants: "—",
-        loci: "—",
+       
         genes: "(5) ANKK1, FTOM, LEPR, MC4R, NPY"
     },
     {
@@ -264,8 +260,7 @@ const wellnessData = [
     {
         name: "Vitamin B12 levels",
         definition: "Vitamin B12 (cobalamin) is a water-soluble vitamin obtained primarily from animal products such as red meat, dairy, and eggs. It exists in several forms (cyano-, methyl-, deoxyadenosyl-, and hydroxycobalamin) and functions as a cofactor in DNA synthesis, fatty acid metabolism, and myelin formation. B12 deficiency can cause hematological and neurological symptoms and may result from autoimmune causes (e.g., pernicious anemia), malabsorption (e.g., gastric bypass, Crohn's disease, celiac disease, Diphyllobothrium latum infection), or dietary insufficiency. B12 is transported in the blood bound mainly to haptocorrin and transcobalamins, with most circulating B12 not bioavailable. Liver stores can last for years but become depleted without absorption. Functional deficiency is often assessed via methylmalonic acid (MMA) and homocysteine levels.",
-        variants: "N/A",
-        loci: "N/A",
+       
         genes: "(7) CLYBL, FUT2, FUT6, MMUT, MTHFR, TCN1, TCN2"
     },
     {
@@ -285,8 +280,7 @@ const wellnessData = [
     {
         name: "Vitamin E levels",
         definition: "Vitamin E refers to eight fat-soluble compounds (four tocopherols and four tocotrienols) with antioxidant properties that protect cell membranes, reduce oxidative stress, and support immune function. Alpha-tocopherol is the most abundant form in humans. Vitamin E is obtained from plant-based foods and requires lipid absorption mechanisms for uptake. Deficiency is rare in developed countries but can occur with fat malabsorption disorders, liver disease, biliary obstruction, or certain genetic conditions such as abetalipoproteinemia. Adequate vitamin E is essential for skeletal muscle integrity and overall cellular protection.",
-        variants: "N/A",
-        loci: "N/A",
+        
         genes: "(5) CD36, CYP4F2, SCARB1, TTPA, ZPR1"
     }
 ];

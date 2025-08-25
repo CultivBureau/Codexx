@@ -3,45 +3,134 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs
 
 // --- DATA DEFINITIONS ---
 const wellnessTestNames = [
-    "Antioxidant capacity", "Apolipoprotein A1", "Apolipoprotein B", "Bitter taste perception", 
-    "Blood glucose", "Body fat percentage", "Body mass index", "Bone mineral density", 
-    "Caffeine and anxiety", "Caffeine and sports performance", "Caffeine dependence after prolonged consumption", 
-    "Calcium levels", "Celiac disease predisposition", "Creatinine levels", "Diastolic blood pressure levels", 
-    "Exercise-induced muscle damage (initial phase)", "Exercise-induced muscle damage (regeneration capacity)", 
-    "Exercise-induced muscle damage (second phase)", "Farmer-hunter profile", "Food intake control", 
-    "Galectin-3 levels", "Genetic predisposition to peanut allergy", "Glycated hemoglobin levels", 
-    "HDL cholesterol levels", "Histamine intolerance", "Intraocular pressure", "Lactose intolerance", 
-    "LDL cholesterol levels", "Levels of vitamin A (beta carotene)", "Long-chain omega fatty acids levels", 
-    "Lung function (exhaled air volume)", "Muscle endurance", "Myoadenylate deaminase (AMPD1 gene)", 
-    "Prediction of visceral adipose tissue", "Preference for sweets", "Serum phosphate levels", 
-    "Systolic blood pressure levels", "Tendinopathies in lower extremities (legs)", "Tendinopathies in upper extremities (arms)", 
-    "Urate levels", "Vitamin B12 levels", "Vitamin C levels", "Vitamin D levels", "Vitamin E levels"
+    "Antioxidant capacity",
+    "Apolipoprotein A1 levels",
+    "Apolipoprotein B levels",
+    "Bitter taste perception",
+    "Blood glucose",
+    "Body fat percentage",
+    "Body mass index",
+    "Bone mineral density",
+    "Caffeine and anxiety",
+    "Caffeine and sports performance",
+    "Caffeine dependence after prolonged consumption",
+    "Calcium levels",
+    "Celiac disease predisposition",
+    "Creatinine levels",
+    "Diastolic blood pressure levels",
+    "Exercise-induced muscle damage (initial phase)",
+    "Exercise-induced muscle damage (regeneration capacity)",
+    "Exercise-induced muscle damage (second phase)",
+    "Farmer-hunter profile",
+    "Food intake control",
+    "Galectin-3 levels",
+    "Genetic predisposition to peanut allergy",
+    "Glycated hemoglobin levels",
+    "HDL cholesterol levels",
+    "Histamine intolerance",
+    "Intraocular pressure",
+    "Lactose intolerance",
+    "LDL cholesterol levels",
+    "Levels of vitamin A (beta carotene)",
+    "Long-chain omega fatty acids levels",
+    "Lung function (exhaled air volume)",
+    "Muscle endurance",
+    "Myoadenylate deaminase (AMPD1 gene)",
+    "Prediction of visceral adipose tissue",
+    "Preference for sweets",
+    "Serum phosphate levels",
+    "Systolic blood pressure levels",
+    "Tendinopathies in lower extremities (legs)",
+    "Tendinopathies in upper extremities (arms)",
+    "Urate levels",
+    "Vitamin B12 levels",
+    "Vitamin C levels",
+    "Vitamin D levels",
+    "Vitamin E levels"
 ];
 
 const traitsTestNames = [
-    "Acne vulgaris", "Alanine aminotransferase levels", "Alcohol dependence after prolonged consumption", 
-    "Alcohol flush reaction", "Alkaline phosphatase levels", "Asparagus odor detection", 
-    "Aspartate aminotransferase levels", "Basal metabolic rate", "Bilirubin levels", "Birth weight", 
-    "Blood coagulation, factor V Leiden and 20210G-A", "Blood Group ABO/Rh", "C-reactive protein", 
-    "Cathepsin D levels", "CCR5Delta32 and susceptibility to HIV infection", "Cognitive ability", 
-    "Corneal curvature", "Corneal hysteresis", "Dental caries and periodontitis", 
-    "Duffy Antigen, malaria resistant", "Ear lobe type", "Earwax type / Armpit odor", 
-    "Eosinophil count", "Epigenetic aging", "Estradiol levels", "Eye clarity", "Facial aging", 
-    "Frequency of bowel movements", "Gamma glutamyl transferase levels", "Gene COMT", "Gene MTHFR", 
-    "Gene MTR", "Gene MTRR", "Hair color", "Hair texture", "Heat production in response to cold", 
-    "Height", "HLA-B27 antigen", "Insomnia", "Intensity of itching due to mosquito bites", 
-    "Left-handedness (left lateral)", "Liver iron levels", "Lymphocyte count", "Male baldness", 
-    "Mental agility", "Metabolizer profile CYP2C19", "Metabolizer profile CYP2C9", 
-    "Metabolizer profile CYP2D6", "Metabolizer profile CYP3A5", "Monocyte count", 
-    "Morning circadian rhythm (Morning person)", "Mouth ulcers", "Nasion prominence", "Neuroticisms", 
-    "Neutrophil count", "Nicotine dependence after prolonged consumption", "Permanent tooth eruption", 
-    "Persistence of fetal hemoglobin", "Photic sneeze reflex", "Pigmented rings on the iris", 
-    "Probability of having red hair", "Probability of snoring", "PSA (Prostate Specific Antigen)", 
-    "QT Intervals", "Red blood cell count", "Resistin levels", "Resting heart rate", "Risk tendency", 
-    "Secretor status and ABH antigens (FUT2 gene)", "Selectin E levels", "Serum albumin levels", 
-    "Sex hormone regulation (SHBG)", "Skin melanin levels", "Sleep duration", 
-    "Smell", "Spleen volume", "Telomere length", 
-    "Thyroid function (TSH levels)", "Tooth morphology", "Total serum protein levels", "Usual walking pace", "White blood cell count"
+    "Acne vulgaris",
+    "Alanine aminotransferase levels",
+    "Alcohol flush reaction",
+    "Alkaline phosphatase levels",
+    "Asparagus odor detection",
+    "Aspartate aminotransferase levels",
+    "Basal metabolic rate",
+    "Bilirubin levels",
+    "Birth weight",
+    "Blood coagulation, factor V Leiden and 20210G-A",
+    "Blood Group ABO/Rh",
+    "C-reactive protein levels",
+    "Cathepsin D levels",
+    "CCR5Delta32 and susceptibility to HIV infection",
+    "Cognitive ability",
+    "Corneal curvature",
+    "Corneal hysteresis",
+    "Dental caries and periodontitis",
+    "Duffy Antigen, malaria resistant",
+    "Ear lobe type",
+    "Earwax type / Armpit odor",
+    "Eosinophil count",
+    "Epigenetic aging",
+    "Estradiol levels",
+    "Eye clarity",
+    "Facial aging",
+    "Frequency of bowel movements",
+    "Gamma glutamyl transferase levels",
+    "Gene COMT",
+    "Gene MTHFR",
+    "Gene MTR",
+    "Gene MTRR",
+    "Hair color",
+    "Hair texture",
+    "Heat production in response to cold",
+    "Height",
+    "HLA-B27 antigen",
+    "Insomnia",
+    "Intensity of itching due to mosquito bites",
+    "Left-handedness (left lateral)",
+    "Liver iron levels",
+    "Lymphocyte count",
+    "Male baldness",
+    "Mental agility",
+    "Metabolizer profile CYP2C19",
+    "Metabolizer profile CYP2C9",
+    "Metabolizer profile CYP2D6",
+    "Metabolizer profile CYP3A5",
+    "Monocyte count",
+    "Morning circadian rythm (Morning person)",
+    "Mouth ulcers",
+    "Nasion prominence",
+    "Neuroticisms",
+    "Neutrophil count",
+    "Nicotine dependence after prolonged consumption",
+    "Permanent tooth eruption",
+    "Persistence of fetal hemoglobin",
+    "Photic sneeze reflex",
+    "Pigmented rings on the iris",
+    "Probability of having red hair",
+    "Probability of snoring",
+    "PSA (Prostate Specific Antigen) Levels",
+    "QT Intervals",
+    "Red blood cell count",
+    "Resistin levels",
+    "Resting heart rate",
+    "Risk tendency",
+    "Secretor status and ABH antigens (FUT2 gene)",
+    "Selectin E levels",
+    "Serum albumin levels",
+    "Sex hormone regulation (SHBG)",
+    "Skin melanin levels",
+    "Sleep duration",
+    "Smell",
+    "Spleen volume",
+    "Telomere length",
+    "Thyroid function (TSH levels)",
+    "Tooth morphology",
+    "Total serum protein levels",
+    "Usual walking pace",
+    "White blood cell count"
 ];
 
 const monogenicTestNames = [
@@ -93,41 +182,107 @@ const monogenicTestNames = [
 ];
 
 const complexTestNames = [
-    "Abdominal aortic aneurysm", "Abdominal hernia", "Actinic keratosis", "Addison's disease", 
-    "Adolescent idiopathic scoliosis", "Age-related hearing impairment", "Age-related macular degeneration", 
-    "Allergic rhinitis", "Alzheimer's disease", "Amyotrophic lateral sclerosis", "Angina pectoris", 
-    "Anxiety", "Arterial hypertension", "Asthma", "Atopic dermatitis", "Atrial fibrillation", 
-    "Barrett's esophagus", "Basal cell carcinoma", "Benign prostatic hyperplasia", "Bipolar disorder", 
-    "Carpal tunnel syndrome", "Cataracts", "Chronic kidney disease", "Chronic lymphocytic leukemia", 
-    "Chronic Obstructive Pulmonary Disease", "Colon polyp", "Colorectal cancer", "Coronary heart disease", 
-    "Crohn's disease", "Cutaneous malignant melanoma", "Deep vein thrombosis", "Depression", 
-    "Diabetes mellitus type 1", "Diabetes mellitus type 2", "Diaphragmatic hernia", 
-    "Diverticulosis - Diverticulitis", "Dupuytren's disease", "Fasciitis", "Gallstones", 
-    "Gastroesophageal reflux disease", "General osteoarthritis", "Glioblastoma", "Glioma", "Gout", 
-    "Graves' disease", "Haemorrhoidal disease", "Hallux valgus", "Hashimoto's thyroiditis", "Headaches", 
-    "Heart failure", "Hypercholesterolemia", "Hyperlipidemia", "Hypothyroidism", 
-    "Idiopathic pulmonary fibrosis", "Inguinal hernia", "Intracranial aneurysm", "Ischemic stroke", 
-    "Juvenile idiopathic arthritis", "Keratoconus", "Lung cancer", "Macular telangiectasia type 2", 
-    "Migraines", "Monoclonal gammopathy of uncertain significance", "Multiple myeloma", 
-    "Multiple sclerosis", "Myeloproliferative neoplasms", "Myocardial infarction", "Narcolepsy", 
-    "Nasal polyps", "Neuroblastoma", "Non-alcoholic fatty liver disease", 
-    "Non-celiac intestinal malabsorption", "Non-medullary thyroid cancer", "Non-syndromic cleft lip", 
-    "Non-toxic multinodular goiter", "Open angle glaucoma", "Oral cavity and oropharyngeal cancer", 
-    "Osteoarthritis of the hip", "Osteoarthritis of the knee", "Osteoporosis", "Pancreatic cancer", 
-    "Parkinson's disease", "Peripheral arterial disease", "Primary biliary cirrhosis", "Prostate cancer", 
-    "Psoriasis", "Pulmonary embolism", "Restless legs syndrome", "Rheumatoid arthritis", "Sarcoidosis", 
-    "Schizophrenia", "Sensorineural hearing loss", "Spinal canal stenosis", 
-    "Squamous cell carcinoma of the skin", "Systemic lupus erythematosus", "Systemic sclerosis", 
-    "Testicular germ cell cancer", "Ulcerative colitis", "Urolithiasis", "Varicose veins", "Vitiligo",
-    "Endometrial cancer", "Endometriosis", "Uterine leiomyoma", "Uterine prolapse", 
-    "Intrahepatic cholestasis of pregnancy", "Polycystic ovary syndrome", "Breast cancer", 
-    "Ovarian cancer", "Cervical cancer", "Bladder cancer", "Kidney cancer", "Liver cancer", 
-    "Stomach cancer", "Esophageal cancer", "Thyroid cancer", "Brain cancer", "Bone cancer", 
-    "Skin cancer", "Lymphoma", "Leukemia", "Myeloma", "Sarcoma", "Melanoma", "Adenocarcinoma", 
-    "Carcinoma in situ", "Metastatic cancer", 
-    "Hypertension", "Diabetes", "Obesity", 
-    "Respiratory disease", "Neurological disease", "Autoimmune disease", "Inflammatory disease", 
-    "Metabolic syndrome", "Cardiovascular disease"
+    "Abdominal aortic aneurysm",
+    "Abdominal hernia",
+    "Actinic keratosis",
+    "Addison's disease",
+    "Adolescent idiopathic scoliosis",
+    "Age-related hearing impairment",
+    "Age-related macular degeneration",
+    "Allergic rhinitis",
+    "Alzheimer's disease",
+    "Amyotrophic lateral sclerosis",
+    "Angina pectoris",
+    "Anxiety",
+    "Arterial hypertension",
+    "Asthma",
+    "Atopic dermatitis",
+    "Atrial fibrillation",
+    "Barrett's esophagus",
+    "Basal cell carcinoma",
+    "Benign prostatic hyperplasia",
+    "Bipolar disorder",
+    "Carpal tunnel syndrome",
+    "Cataracts",
+    "Chronic kidney disease",
+    "Chronic lymphocytic leukemia",
+    "Chronic Obstructive Pulmonary Disease",
+    "Colon polyp",
+    "Colorectal cancer",
+    "Coronary heart disease",
+    "Crohn's disease",
+    "Cutaneous malignant melanoma",
+    "Deep vein thrombosis",
+    "Depression",
+    "Diabetes mellitus type 1",
+    "Diabetes mellitus type 2",
+    "Diaphragmatic hernia",
+    "Diverticulosis - Diverticulitis",
+    "Dupuytren's disease",
+    "Fasciitis",
+    "Gallstones",
+    "Gastroesophageal reflux disease",
+    "General osteoarthritis",
+    "Glioblastoma",
+    "Glioma",
+    "Gout",
+    "Graves' disease",
+    "Haemorrhoidal disease",
+    "Hallux valgus",
+    "Hashimoto's thyroiditis",
+    "Headaches",
+    "Heart failure",
+    "Hypercholesterolemia",
+    "Hyperlipidemia",
+    "Hypothyroidism",
+    "Idiopathic pulmonary fibrosis",
+    "Inguinal hernia",
+    "Intracranial aneurysm",
+    "Ischemic stroke",
+    "Juvenile idiopathic arthritis",
+    "Keratoconus",
+    "Lung cancer",
+    "Macular telangiectasia type 2",
+    "Migraines",
+    "Monoclonal Gammopathy of Uncertain Significance",
+    "Multiple myeloma",
+    "Multiple sclerosis",
+    "Myeloproliferative neoplasms",
+    "Myocardial infarction",
+    "Narcolepsy",
+    "Nasal polyps",
+    "Neuroblastoma",
+    "Non-alcoholic fatty liver disease",
+    "Non-celiac intestinal malabsorption",
+    "Non-medullary thyroid cancer",
+    "Non-syndromic cleft lip",
+    "Non-toxic multinodular goiter",
+    "Open angle glaucoma",
+    "Oral cavity and oropharyngeal cancer",
+    "Osteoarthritis of the hip",
+    "Osteoarthritis of the knee",
+    "Osteoporosis",
+    "Pancreatic cancer",
+    "Parkinson's disease",
+    "Peripheral arterial disease",
+    "Primary Biliary Cirrhosis",
+    "Prostate cancer",
+    "Psoriasis",
+    "Pulmonary embolism",
+    "Restless legs syndrome",
+    "Rheumatoid arthritis",
+    "Sarcoidosis",
+    "Schizophrenia",
+    "Sensorineural hearing loss",
+    "Spinal canal stenosis",
+    "Squamous cell carcinoma of the skin",
+    "Systemic lupus erythematosus",
+    "Systemic sclerosis",
+    "Testicular germ cell cancer",
+    "Ulcerative colitis",
+    "Urolithiasis",
+    "Varicose veins",
+    "Vitiligo"
 ];
 
 const pharmaData = [
@@ -188,7 +343,7 @@ const pharmaData = [
     { name: "Nortriptyline (Dosage)", action: "Antidepressants" },
     { name: "Omeprazole (Dosage)", action: "Anti-acid treatment" },
     { name: "Pantoprazole (Dosage)", action: "Anti-acid treatment" },
-    { name: "Paroxetine (Dosage)", action: "Antidepressants" },
+    { name: "Paroxetin (Dosage)", action: "Antidepressants" },
     { name: "Peginterferons alfa-2a -2b and ribavirin (Efficacy)", action: "Antivirals" },
     { name: "Pimozide (Dosage)", action: "Antipsychotics" },
     { name: "Pitavastatin (Dosage)", action: "Hypolipidemic agents" },
@@ -206,22 +361,7 @@ const pharmaData = [
     { name: "Venlafaxine (Dosage)", action: "Antidepressants" },
     { name: "Voriconazole (Dosage)", action: "Antifungals" },
     { name: "Vortioxetine (Dosage)", action: "Antidepressants" },
-    { name: "Zuclopenthixol (Dosage)", action: "Antipsychotics" },
-    { name: "Allopurinol (Dosage)", action: "Antigout agents" },
-    { name: "Cisplatin (Adverse Reactions)", action: "Antineoplastics" },
-    { name: "Eliglustat (Adverse Reactions)", action: "Enzyme replacement therapy" },
-    { name: "Flucytosine (Adverse Reactions)", action: "Antifungals" },
-    { name: "Fluindione (Adverse Reactions)", action: "Antithrombotics" },
-    { name: "Gonadotrophins and Ovulation Stimulants (Efficacy)", action: "Hormonal agents" },
-    { name: "Hormonal contraceptives (Adverse effects)", action: "Hormonal agents" },
-    { name: "Hydrocodone (Dosage)", action: "Opioid analgesics" },
-    { name: "Lornoxicam (Dosage)", action: "Non-steroidal anti-inflammatory drug" },
-    { name: "Meloxicam (Dosage)", action: "Non-steroidal anti-inflammatory drug" },
-    { name: "Piroxicam (Dosage)", action: "Non-steroidal anti-inflammatory drug" },
-    { name: "Pitolisant (Dosage)", action: "Central nervous system stimulants" },
-    { name: "Propafenone (Adverse Reactions)", action: "Antiarrhythmics" },
-    { name: "Siponimod (Dosage)", action: "Immunomodulators" },
-    { name: "Tenoxicam (Dosage)", action: "Non-steroidal anti-inflammatory drug" }
+    { name: "Zuclopenthixol (Dosage)", action: "Antipsychotics" }
 ];
 
 // Main application logic
@@ -490,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error("Failed to fetch patient data:", error);
-            patientTableBody.innerHTML = `<tr><td colspan="5" class="text-center p-8 text-red-500">Failed to load patient data.</td></tr>`;
+            patientTableBody.innerHTML = `<tr><td colspan="7" class="text-center p-8 text-red-500">Failed to load patient data.</td></tr>`;
         }
     }
 
@@ -498,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const patientTableBody = document.getElementById('patient-table-body');
         patientTableBody.innerHTML = '';
         if (patients.length === 0) {
-            patientTableBody.innerHTML = `<tr><td colspan="6" class="text-center p-8 text-gray-500">No patients found.</td></tr>`;
+            patientTableBody.innerHTML = `<tr><td colspan="7" class="text-center p-8 text-gray-500">No patients found.</td></tr>`;
             return;
         }
         patients.forEach(patient => {
@@ -520,7 +660,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button onclick="launchReport('${patient.id}')" class="text-green-600 hover:text-green-900">Launch Report</button>
+                    <div class="flex flex-col space-y-2">
+                        <button onclick="launchReport('${patient.id}')" class="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 px-3 py-1 rounded-md transition-colors duration-200 flex items-center space-x-1">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>Launch Report</span>
+                        </button>
+                        <button onclick="copyUserLink('${patient.id}')" class="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-md transition-colors duration-200 flex items-center space-x-1">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <span>Copy Link</span>
+                        </button>
+                    </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <button 
@@ -583,19 +732,9 @@ async function launchReport(patientId) {
         const patientName = patientRow.querySelector('td:nth-child(2)').textContent;
         const patientPhone = patientRow.querySelector('td:nth-child(3)').textContent;
         
-        // Fetch patient test results
-        const resultsApiUrl = `http://www.codex.somee.com/api/Codex/GetAllTestResults/${patientId}`;
-        const response = await fetch(resultsApiUrl);
-        
-        if (!response.ok) {
-            throw new Error(`Failed to fetch results: ${response.status}`);
-        }
-        
-        const resultsData = await response.json();
-        console.log('Patient test results:', resultsData);
-        
-        // Open User_Page.html with patient data
-        openUserPageWithData(patientId, patientName, patientPhone, resultsData);
+        // Open external Codex user page with patient ID
+        const externalUrl = `https://codex.natixglobal.com/user/${patientId}`;
+        window.open(externalUrl, '_blank');
         
     } catch (error) {
         console.error('Error launching report:', error);
@@ -619,6 +758,50 @@ function openUserPageWithData(patientId, patientName, patientPhone, resultsData)
     // Open the user page in a new window/tab
     const userPageUrl = './user_page/User_Page.html';
     window.open(userPageUrl, '_blank');
+}
+
+// Function to copy user link to clipboard
+async function copyUserLink(patientId) {
+    try {
+        const userLink = `https://codex.natixglobal.com/user/${patientId}`;
+        
+        // Use modern clipboard API if available
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(userLink);
+        } else {
+            // Fallback for older browsers or non-secure contexts
+            const textArea = document.createElement('textarea');
+            textArea.value = userLink;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+        
+        // Show success feedback
+        const copyBtn = event.target.closest('button');
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>Copied!</span>';
+        copyBtn.classList.remove('text-blue-600', 'hover:text-blue-900', 'bg-blue-50', 'hover:bg-blue-100');
+        copyBtn.classList.add('text-green-600', 'bg-green-50');
+        
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            copyBtn.innerHTML = originalText;
+            copyBtn.classList.remove('text-green-600', 'bg-green-50');
+            copyBtn.classList.add('text-blue-600', 'hover:text-blue-900', 'bg-blue-50', 'hover:bg-blue-100');
+        }, 2000);
+        
+        console.log('User link copied to clipboard:', userLink);
+        
+    } catch (error) {
+        console.error('Error copying user link:', error);
+        alert('Failed to copy link to clipboard. Please copy manually: ' + `https://codex.natixglobal.com/user/${patientId}`);
+    }
 }
 
 // Function to delete a patient
