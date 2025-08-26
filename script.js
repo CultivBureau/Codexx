@@ -761,22 +761,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Get correct base URL automatically
+function getBaseUrl() {
+    return window.location.origin; 
+}
+
+// Build User_Page URL dynamically
+function getUserPageUrl(patientId) {
+    return `${getBaseUrl()}/user_page/User_Page.html?id=${patientId}`;
+}
+
+// Launch the report page
+// function launchReport(patientId) {
+//     const url = getUserPageUrl(patientId);
+//     console.log("Opening user page:", url);
+//     window.open(url, "_blank");
+// }
+
 // Global function for launching reports (called from HTML onclick)
 async function launchReport(patientId) {
     try {
-        // Correct query selector with attribute selector
+        // Find patient info from the table
         const patientRow = document.querySelector(`tr[data-patient-id="${patientId}"]`);
-        if (!patientRow) throw new Error('Patient information not found');
+        if (!patientRow) {
+            throw new Error('Patient information not found');
+        }
 
-        // Build URL automatically from current origin
-        const baseUrl = `${window.location.origin}/user`;
+        const patientName = patientRow.querySelector('td:nth-child(2)')?.textContent || "";
+        const patientPhone = patientRow.querySelector('td:nth-child(3)')?.textContent || "";
+
+        // Store patient data in localStorage for the user page to access
+        const patientData = {
+            id: patientId,
+            name: patientName,
+            phone: patientPhone
+        };
+        localStorage.setItem('patientData', JSON.stringify(patientData));
+
+        // Build user page URL dynamically (works both local + deployed)
+        const baseUrl = `${window.location.origin}/user_page/User_Page.html`;
         const externalUrl = `${baseUrl}?id=${patientId}`;
+
+        console.log('Opening user page:', externalUrl);
 
         // Open in new tab
         window.open(externalUrl, '_blank');
+
     } catch (error) {
         console.error('Error launching report:', error);
-        alert(`Error loading report: ${error.message}`);
+        alert(`Error launching report: ${error.message}`);
     }
 }
 
