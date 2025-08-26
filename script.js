@@ -720,23 +720,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Global function for launching reports (called from HTML onclick)
 async function launchReport(patientId) {
-    console.log(`Launching report for patient ${patientId}`);
-    
     try {
-        // Find patient info from the table
         const patientRow = document.querySelector(`tr[data-patient-id="${patientId}"]`);
-        
-        if (!patientRow) {
-            throw new Error('Patient information not found');
-        }
-        
-        const patientName = patientRow.querySelector('td:nth-child(2)').textContent;
-        const patientPhone = patientRow.querySelector('td:nth-child(3)').textContent;
-        
-        // Open external Codex user page with patient ID parameter
-        const externalUrl = `https://codex.natixglobal.com/user?id=${patientId}`;
+        if (!patientRow) throw new Error('Patient information not found');
+
+        // Build automatically from current origin
+        const baseUrl = `${window.location.origin}/user`;
+        const externalUrl = `${baseUrl}?id=${patientId}`;
+
         window.open(externalUrl, '_blank');
-        
     } catch (error) {
         console.error('Error launching report:', error);
         alert(`Error loading report: ${error.message}`);
