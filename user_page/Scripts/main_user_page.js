@@ -494,6 +494,22 @@ document.addEventListener('DOMContentLoaded', () => {
                                 lucide.createIcons();
                             }, 50);
                             
+                            // Add event listeners for toggle buttons
+                            setTimeout(() => {
+                                addMobileToggleEventListeners(content);
+                            }, 100);
+                            
+                            // Smooth scroll to center the expanded content on mobile
+                            setTimeout(() => {
+                                if (window.innerWidth <= 768) { // Mobile only
+                                    content.scrollIntoView({ 
+                                        behavior: 'smooth', 
+                                        block: 'center',
+                                        inline: 'nearest'
+                                    });
+                                }
+                            }, 150);
+                            
 
                         }
                         
@@ -695,8 +711,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="text-blue-700 text-sm leading-relaxed">
                         <span class="definition-preview-mobile">${shortDefinition}</span>
                         ${item.definition.length > 120 ? `
-                            <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors" 
-                                    onclick="toggleMobileDefinition(this, '${item.name.replace(/\s+/g, '-').toLowerCase()}')">
+                            <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors definition-toggle-btn" 
+                                    data-item-id="${item.name.replace(/\s+/g, '-').toLowerCase()}">
                                 Read More
                             </button>
                             <span class="definition-full-mobile hidden">${item.definition}</span>
@@ -725,8 +741,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="text-sm">
                         <span class="genes-preview-mobile text-gray-800 font-medium">${firstGene}</span>
                         ${hasMultipleGenes ? `
-                            <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors" 
-                                    onclick="toggleMobileGenes(this, '${item.name.replace(/\s+/g, '-').toLowerCase()}')">
+                            <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors genes-toggle-btn" 
+                                    data-item-id="${item.name.replace(/\s+/g, '-').toLowerCase()}">
                                 Read More
                             </button>
                             <span class="genes-full-mobile hidden text-gray-800 font-medium">${genesText}</span>
@@ -760,10 +776,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="text-right">
                                 <span class="genes-preview-mobile text-gray-800 font-semibold">${firstGene}</span>
                                 ${hasMultipleGenes ? `
-                                    <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors text-xs" 
-                                            onclick="toggleMobileGenes(this, '${item.name.replace(/\s+/g, '-').toLowerCase()}')">
-                                        Read More
-                                    </button>
+                                                                    <button class="text-blue-600 font-semibold ml-2 underline hover:text-blue-800 transition-colors text-xs genes-toggle-btn" 
+                                        data-item-id="${item.name.replace(/\s+/g, '-').toLowerCase()}">
+                                    Read More
+                                </button>
                                     <span class="genes-full-mobile hidden text-gray-800 font-semibold">${genesText}</span>
                                 ` : ''}
                             </div>
@@ -814,6 +830,31 @@ document.addEventListener('DOMContentLoaded', () => {
             button.textContent = 'Read More';
             button.className = 'text-blue-600 font-semibold ml-1 underline hover:text-blue-800 transition-colors';
         }
+    }
+    
+    // Function to add event listeners for mobile toggle buttons
+    function addMobileToggleEventListeners(contentContainer) {
+        // Add event listeners for definition toggle buttons
+        const definitionButtons = contentContainer.querySelectorAll('.definition-toggle-btn');
+        definitionButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const itemId = button.dataset.itemId;
+                toggleMobileDefinition(button, itemId);
+            });
+        });
+        
+        // Add event listeners for genes toggle buttons
+        const genesButtons = contentContainer.querySelectorAll('.genes-toggle-btn');
+        genesButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const itemId = button.dataset.itemId;
+                toggleMobileGenes(button, itemId);
+            });
+        });
     }
     
     // Function to update risk indicators with proper colors
